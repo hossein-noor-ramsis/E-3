@@ -5,20 +5,19 @@ $border-primary: rgba(255, 255, 255, 0.2);
 /* === start of section === */
 .bg-night {
     background-color: black;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.login {
+.login-box {
     & {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        color: $text-primary;
         position: relative;
+        color: $text-primary;
+        background: rgba($color: $text-primary, $alpha: 0.1);
+        padding: 3rem 2rem;
+        border-radius: 1rem;
     }
 
     .lamp {
@@ -30,54 +29,41 @@ $border-primary: rgba(255, 255, 255, 0.2);
         padding: 0.25rem 15rem;
     }
 
-    .box {
-        position: relative;
-        background: rgba($color: $text-primary, $alpha: 0.1);
-        backdrop-filter: blur(1rem);
-    }
-
-    .input-group {
-        padding: 1rem;
-        display: flex;
-        justify-content: center;
-    }
-
-    .input-group input {
+    .input-box input {
+        width: 100%;
         color: $text-primary;
         background-color: transparent;
-        padding: 0.5rem;
         border: none;
         border-bottom: 2px solid $text-primary;
     }
 
-    .input-group input:focus {
+    .input-box input:focus {
         color: $text-primary;
         background-color: transparent;
-        padding: 0.5rem;
         border: none;
         border-bottom: 2px solid $text-primary;
         outline: none;
     }
 
-    .input-group label {
+    .input-box label {
+        text-align: start;
         transition: 0.5s;
-        transform: translate(-6rem, 2rem);
+        transform: translate(0rem, -2.5rem);
         margin-top: 0.5rem;
     }
 
-    .input-group input:hover + label {
+    .input-box input:focus + label, .input-box input:valid + label, .input-box input:user-invalid + label {
         transition: 0.5s;
-        transform: translate(-6rem, -0.5rem);
+        transform: translate(0rem, -3.7rem);
     }
 
-    .input-group i {
+    .input-box i {
         transition: 0.5s;
         position: absolute;
         right: 2rem;
-        margin-top: 3rem;
     }
 
-    .input-group:hover i {
+    .input-box:hover i {
         transition: 0.5s;
         transform: scale(120%);
     }
@@ -89,6 +75,11 @@ $border-primary: rgba(255, 255, 255, 0.2);
 
     a:hover {
         text-decoration: underline;
+    }
+
+    .btn {
+        width: 100%;
+        margin: 1rem 0rem;
     }
 
     .btn:hover {

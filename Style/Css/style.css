@@ -39,21 +39,20 @@ body {
 /* === start of section === */
 .bg-night {
   background-color: black;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-}
-
-.login {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  color: white;
-  position: relative;
 }
-.login .lamp {
+
+.login-box {
+  position: relative;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+}
+.login-box .lamp {
   position: absolute;
   top: 0px;
   left: 50%;
@@ -61,63 +60,55 @@ body {
   background-color: white;
   padding: 0.25rem 15rem;
 }
-.login .box {
-  position: relative;
-  background: rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(1rem);
-          backdrop-filter: blur(1rem);
-}
-.login .input-group {
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-}
-.login .input-group input {
+.login-box .input-box input {
+  width: 100%;
   color: white;
   background-color: transparent;
-  padding: 0.5rem;
   border: none;
   border-bottom: 2px solid white;
 }
-.login .input-group input:focus {
+.login-box .input-box input:focus {
   color: white;
   background-color: transparent;
-  padding: 0.5rem;
   border: none;
   border-bottom: 2px solid white;
   outline: none;
 }
-.login .input-group label {
+.login-box .input-box label {
+  text-align: start;
   transition: 0.5s;
-  transform: translate(-6rem, 2rem);
+  transform: translate(0rem, -2.5rem);
   margin-top: 0.5rem;
 }
-.login .input-group input:hover + label {
+.login-box .input-box input:focus + label, .login-box .input-box input:valid + label, .login-box .input-box input:user-invalid + label {
   transition: 0.5s;
-  transform: translate(-6rem, -0.5rem);
+  transform: translate(0rem, -3.7rem);
 }
-.login .input-group i {
+.login-box .input-box i {
   transition: 0.5s;
   position: absolute;
   right: 2rem;
-  margin-top: 3rem;
 }
-.login .input-group:hover i {
+.login-box .input-box:hover i {
   transition: 0.5s;
   transform: scale(120%);
 }
-.login a {
+.login-box a {
   color: white;
   text-decoration: none;
 }
-.login a:hover {
+.login-box a:hover {
   text-decoration: underline;
 }
-.login .btn:hover {
+.login-box .btn {
+  width: 100%;
+  margin: 1rem 0rem;
+}
+.login-box .btn:hover {
   background-color: white;
   box-shadow: 0rem 0rem 1rem white;
 }
-.login .btn-back {
+.login-box .btn-back {
   position: absolute;
   right: -4rem;
   top: 2rem;
@@ -125,13 +116,13 @@ body {
   border-radius: 0.5rem;
   background-color: rgba(255, 255, 255, 0.1);
 }
-.login .btn-line {
+.login-box .btn-line {
   height: 100%;
   width: 40%;
   padding: 2.5rem 0.25rem;
   background-color: black;
 }
-.login .button-sm {
+.login-box .button-sm {
   position: absolute;
   top: 0.4rem;
   left: 50%;
