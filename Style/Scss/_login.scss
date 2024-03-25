@@ -1,0 +1,132 @@
+/* === start of variable === */
+$text-primary: white;
+$border-primary: rgba(255, 255, 255, 0.2);
+/* === end of variable === */
+/* === start of section === */
+.bg-night {
+    background-color: black;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.login {
+    & {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: $text-primary;
+        position: relative;
+    }
+
+    .lamp {
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        background-color: $text-primary;
+        padding: 0.25rem 15rem;
+    }
+
+    .box {
+        position: relative;
+        background: rgba($color: $text-primary, $alpha: 0.1);
+        backdrop-filter: blur(1rem);
+    }
+
+    .input-group {
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .input-group input {
+        color: $text-primary;
+        background-color: transparent;
+        padding: 0.5rem;
+        border: none;
+        border-bottom: 2px solid $text-primary;
+    }
+
+    .input-group input:focus {
+        color: $text-primary;
+        background-color: transparent;
+        padding: 0.5rem;
+        border: none;
+        border-bottom: 2px solid $text-primary;
+        outline: none;
+    }
+
+    .input-group label {
+        transition: 0.5s;
+        transform: translate(-6rem, 2rem);
+        margin-top: 0.5rem;
+    }
+
+    .input-group input:hover + label {
+        transition: 0.5s;
+        transform: translate(-6rem, -0.5rem);
+    }
+
+    .input-group i {
+        transition: 0.5s;
+        position: absolute;
+        right: 2rem;
+        margin-top: 3rem;
+    }
+
+    .input-group:hover i {
+        transition: 0.5s;
+        transform: scale(120%);
+    }
+
+    a {
+        color: $text-primary;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .btn:hover {
+        background-color: $text-primary;
+        box-shadow: 0rem 0rem 1rem $text-primary;
+    }
+
+    .btn-back {
+        position: absolute;
+        right: -4rem;
+        top: 2rem;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        background-color: rgba($color: $text-primary, $alpha: 0.1);
+    }
+
+    .btn-line {
+        height: 100%;
+        width: 40%;
+        padding: 2.5rem 0.25rem;
+        background-color: black;
+    }
+
+    .button-sm {
+        position: absolute;
+        top: 0.4rem;
+        left: 50%;
+        transform: translate(-50%, 0);
+        padding: 0.4rem 0.3rem;
+        border: none;
+        border-radius: 0.25rem;
+        outline: none;
+        color: $text-primary;
+        background-color: rgb(64, 64, 64);
+    }
+}
+
+/* === end of section === */
+/* === start of function === */
+
+/* === end of function === */
