@@ -16,20 +16,122 @@ $border-primary: rgba(255, 255, 255, 0.2);
         position: relative;
         color: $text-primary;
         background: rgba($color: $text-primary, $alpha: 0.1);
-        padding: 3rem 2rem;
+        padding: 4rem 3rem;
         border-radius: 1rem;
     }
 
     .lamp {
-        position: absolute;
+        position: fixed;
         top: 0px;
         left: 50%;
         transform: translate(-50%, 0%);
-        background-color: $text-primary;
+        background-color: #00f7ff;
         padding: 0.25rem 15rem;
     }
 
+    .lamp::before {
+        content: " ";
+        position: absolute;
+        top: -80rem;
+        transform: translate(-50%, 0);
+        width: 100%;
+        height: 70rem;
+        background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.3) -50%,
+            rgba(255, 255, 255, 0) 90%
+        );
+        clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
+        pointer-events: none;
+        transition: 0.5s ease;
+    }
+
+    .input-check:checked ~ .lamp::before {
+        top: 0rem;
+    }
+
+    .toggle {
+        position: absolute;
+        top: 2rem;
+        right: -5rem;
+        width: 4rem;
+        height: 8rem;
+        background-color: #191919;
+        border-radius: 0.5rem;
+    }
+
+    .toggle::before {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0.5rem;
+        height: 6rem;
+        background-color: black;
+    }
+
+    .toggle::after {
+        content: " ";
+        position: absolute;
+        top: 0.5rem;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 2.8rem;
+        height: 2.8rem;
+        background-color: #333333;
+        border: 2px solid #191919;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        box-shadow: 0 0 0.5rem rgba($color: #000000, $alpha: 0.5);
+        transition: 0.5s ease;
+    }
+
+    .toggle .text {
+        position: absolute;
+        top: 1.1rem;
+        left: 50%;
+        transform: translate(-50%, 0);
+        color: $text-primary;
+        font-size: 1rem;
+        z-index: 1;
+        transition: 0.5s;
+        cursor: pointer;
+    }
+
+    .toggle .off {
+        opacity: 1;
+    }
+
+    .input-check:checked ~ .toggle .off {
+        transform: translate(-0.8rem, 4.2rem);
+        opacity: 0;
+    }
+
+    .toggle .on {
+        opacity: 0;
+    }
+
+    .input-check:checked ~ .toggle .on {
+        transform: translate(-0.8rem, 4.2rem);
+        opacity: 1;
+        color: #00f7ff;
+        text-shadow: 0 0 1rem #00f7ff, 0 0 2rem #00f7ff, 0 0 3rem #00f7ff, 0 0 4rem #00f7ff;
+    }
+
+    .input-check {
+        position: absolute;
+        right: -5rem;
+        z-index: 1;
+        opacity: 0;
+    }
+
+    .input-check:checked ~ .toggle::after {
+        top: 4.7rem;
+    }
+
     .input-box input {
+        transition: 0.5s ease;
         width: 100%;
         color: $text-primary;
         background-color: transparent;
@@ -45,30 +147,46 @@ $border-primary: rgba(255, 255, 255, 0.2);
         outline: none;
     }
 
+    .input-check:checked ~ .input-box input {
+        color: #00f7ff;
+        text-shadow: 0 0 0.5rem #00f7ff;
+    }
+
     .input-box label {
+        transition: 0.5s ease;
         text-align: start;
-        transition: 0.5s;
         transform: translate(0rem, -2.5rem);
         margin-top: 0.5rem;
     }
 
-    .input-box input:focus + label, .input-box input:valid + label, .input-box input:user-invalid + label {
+    .input-box input:focus ~ label,
+    .input-box input:valid ~ label,
+    .input-box input:user-invalid ~ label {
         transition: 0.5s;
         transform: translate(0rem, -3.7rem);
     }
 
+    .input-check:checked ~ .input-box label {
+        color: #00f7ff;
+        text-shadow: 0 0 0.5rem #00f7ff;
+    }
+
     .input-box i {
-        transition: 0.5s;
+        transition: 0.5s ease;
         position: absolute;
-        right: 2rem;
+        right: 3rem;
+        font-size: large;
     }
 
     .input-box:hover i {
-        transition: 0.5s;
         transform: scale(120%);
     }
 
-    a {
+    a,
+    p,
+    input,
+    label {
+        transition: 0.5s ease;
         color: $text-primary;
         text-decoration: none;
     }
@@ -77,43 +195,43 @@ $border-primary: rgba(255, 255, 255, 0.2);
         text-decoration: underline;
     }
 
+    .bold {
+        font-weight: bold;
+    }
+
+    .input-check:checked ~ .remember-forgot label,
+    .input-check:checked ~ .remember-forgot a,
+    .input-check:checked ~ .register p,
+    .input-check:checked ~ .register p a,
+    .input-check:checked ~ .input-box i {
+        color: #00f7ff;
+        text-shadow: 0 0 0.5rem #00f7ff;
+    }
+
     .btn {
+        transition: 0.5s ease;
+        color: black;
         width: 100%;
         margin: 1rem 0rem;
     }
 
-    .btn:hover {
-        background-color: $text-primary;
-        box-shadow: 0rem 0rem 1rem $text-primary;
+    .input-check:checked ~ .btn {
+        color: black;
+        background-color: #00f7ff;
+        text-shadow: 0 0 0.5rem #00f7ff;
+        box-shadow: 0 0 1rem #00f7ff;
     }
 
-    .btn-back {
-        position: absolute;
-        right: -4rem;
-        top: 2rem;
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        background-color: rgba($color: $text-primary, $alpha: 0.1);
-    }
-
-    .btn-line {
-        height: 100%;
-        width: 40%;
-        padding: 2.5rem 0.25rem;
-        background-color: black;
-    }
-
-    .button-sm {
-        position: absolute;
-        top: 0.4rem;
-        left: 50%;
-        transform: translate(-50%, 0);
-        padding: 0.4rem 0.3rem;
-        border: none;
-        border-radius: 0.25rem;
-        outline: none;
+    h2 {
+        transition: 0.5s ease;
+        font-size: 2rem;
         color: $text-primary;
-        background-color: rgb(64, 64, 64);
+        font-weight: bold;
+    }
+
+    .input-check:checked ~ h2 {
+        color: #00f7ff;
+        text-shadow: 0 0 1rem #00f7ff, 0 0 2rem #00f7ff;
     }
 }
 

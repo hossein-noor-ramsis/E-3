@@ -21,9 +21,15 @@
     <body class="bg-night">
         <header></header>
         <main>
-            <section class="login-box">
+            <section class="login-box">                            
                 <form action=" ">
-                    <h2 class="text-center pb-4" >Login</h2>
+                    <input id="input-check" type="checkbox" class="input-check" />
+                    <div class="lamp rounded-pill"></div>
+                    <label for="input-check" class="toggle">
+                        <span class="text off">OFF</span>
+                        <span class="text on">ON</span>
+                    </label>
+                    <h2 class="text-center pb-4">Login</h2>
                     <div class="input-box">
                         <span></span>
                         <i class="bx bxs-envelope"></i>
@@ -31,8 +37,8 @@
                         <label for="email">Email</label>
                     </div>
 
-                    <div><br></div>
-                    
+                    <div><br /></div>
+
                     <div class="input-box">
                         <i class="bx bxs-lock-alt"></i>
                         <input id="password" type="password" required />
@@ -40,14 +46,14 @@
                     </div>
 
                     <div class="text-center remember-forgot">
-                        <label class="me-3" for=""> <input type="checkbox" /> Remember me </label>
+                        <label class="me-3" for=""><input type="checkbox" /> Remember me </label>
                         <a class="ms-3" href="">Forgot password</a>
                     </div>
-
+                    
                     <input class="btn btn-light rounded-pill" type="submit" value="Login" />
 
                     <div class="register text-center">
-                        <p>Don't have an account?<a href=""> Register</a></p>
+                        <p>Don't have an account?<a class="bold" href=""> Register</a></p>
                     </div>
                 </form>
             </section>
