@@ -1,6 +1,7 @@
 /* === start of variable === */
 $text-primary: white;
 $border-primary: rgba(255, 255, 255, 0.2);
+$neon-primary: #00f7ff;
 /* === end of variable === */
 /* === start of section === */
 .bg-night {
@@ -25,7 +26,7 @@ $border-primary: rgba(255, 255, 255, 0.2);
         top: 0px;
         left: 50%;
         transform: translate(-50%, 0%);
-        background-color: #00f7ff;
+        background-color: $neon-primary;
         padding: 0.25rem 15rem;
     }
 
@@ -115,8 +116,9 @@ $border-primary: rgba(255, 255, 255, 0.2);
     .input-check:checked ~ .toggle .on {
         transform: translate(-0.8rem, 4.2rem);
         opacity: 1;
-        color: #00f7ff;
-        text-shadow: 0 0 1rem #00f7ff, 0 0 2rem #00f7ff, 0 0 3rem #00f7ff, 0 0 4rem #00f7ff;
+        color: $neon-primary;
+        text-shadow: 0 0 1rem $neon-primary, 0 0 2rem $neon-primary, 0 0 3rem $neon-primary,
+            0 0 4rem $neon-primary;
     }
 
     .input-check {
@@ -148,8 +150,8 @@ $border-primary: rgba(255, 255, 255, 0.2);
     }
 
     .input-check:checked ~ .input-box input {
-        color: #00f7ff;
-        text-shadow: 0 0 0.5rem #00f7ff;
+        color: $neon-primary;
+        text-shadow: 0 0 0.5rem $neon-primary;
     }
 
     .input-box label {
@@ -162,13 +164,13 @@ $border-primary: rgba(255, 255, 255, 0.2);
     .input-box input:focus ~ label,
     .input-box input:valid ~ label,
     .input-box input:user-invalid ~ label {
-        transition: 0.5s;
+        transition: 0.5s ease;
         transform: translate(0rem, -3.7rem);
     }
 
     .input-check:checked ~ .input-box label {
-        color: #00f7ff;
-        text-shadow: 0 0 0.5rem #00f7ff;
+        color: $neon-primary;
+        text-shadow: 0 0 0.5rem $neon-primary;
     }
 
     .input-box i {
@@ -204,8 +206,8 @@ $border-primary: rgba(255, 255, 255, 0.2);
     .input-check:checked ~ .register p,
     .input-check:checked ~ .register p a,
     .input-check:checked ~ .input-box i {
-        color: #00f7ff;
-        text-shadow: 0 0 0.5rem #00f7ff;
+        color: $neon-primary;
+        text-shadow: 0 0 0.5rem $neon-primary;
     }
 
     .btn {
@@ -217,9 +219,9 @@ $border-primary: rgba(255, 255, 255, 0.2);
 
     .input-check:checked ~ .btn {
         color: black;
-        background-color: #00f7ff;
-        text-shadow: 0 0 0.5rem #00f7ff;
-        box-shadow: 0 0 1rem #00f7ff;
+        background-color: $neon-primary;
+        text-shadow: 0 0 0.5rem $neon-primary;
+        box-shadow: 0 0 1rem $neon-primary;
     }
 
     h2 {
@@ -230,8 +232,8 @@ $border-primary: rgba(255, 255, 255, 0.2);
     }
 
     .input-check:checked ~ h2 {
-        color: #00f7ff;
-        text-shadow: 0 0 1rem #00f7ff, 0 0 2rem #00f7ff;
+        color: $neon-primary;
+        text-shadow: 0 0 1rem $neon-primary, 0 0 2rem $neon-primary;
     }
 }
 
