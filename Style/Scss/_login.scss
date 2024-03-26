@@ -22,12 +22,16 @@ $neon-primary: #00f7ff;
     }
 
     .lamp {
+        transition: 0.3s ease;
         position: fixed;
         top: 0px;
         left: 50%;
         transform: translate(-50%, 0%);
-        background-color: $neon-primary;
         padding: 0.25rem 15rem;
+    }
+
+    .input-check:checked ~ .lamp {
+        background-color: $neon-primary;
     }
 
     .lamp::before {
