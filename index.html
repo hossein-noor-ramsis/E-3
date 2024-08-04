@@ -27,7 +27,7 @@
         <form action=" ">
           <input id="input-check" type="checkbox" class="input-check" />
           <div class="lamp rounded-pill"></div>
-          <label for="input-check" class="toggle">
+          <label for="input-check" class="my-toggle">
             <span class="text off">OFF</span>
             <span class="text on">ON</span>
           </label>
@@ -48,11 +48,22 @@
           </div>
 
           <div class="text-center remember-forgot">
-            <label class="me-3" for=""><input type="checkbox" /> Remember me </label>
-            <a class="ms-3" href="">Forgot password</a>
+            <div class="checkbox-wrapper-33">
+              <label class="checkbox">
+                <input class="checkbox__trigger visuallyhidden" type="checkbox" />
+                <span class="checkbox__symbol">
+                  <svg aria-hidden="true" class="icon-checkbox" width="28px" height="28px" viewBox="0 0 28 28" version="1" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 14l8 7L24 7"></path>
+                  </svg>
+                </span>
+                <p class="checkbox__textwrapper text-sm">Remember me</p>
+              </label>
+            </div>
+            
+            <a class="ms-4 text-sm" href="">Forgot password</a>
           </div>
 
-          <input class="btn btn-light rounded-pill" type="submit" value="Login" />
+          <input class="btn btn-light rounded-pill mt-4" type="submit" value="Login" />
 
           <div class="register text-center">
             <p>Don't have an account?<a class="bold" href=""> Register</a></p>
@@ -69,3 +80,4 @@
     <script src="https://kit.fontawesome.com/d99f683258.js" crossorigin="anonymous"></script>
   </body>
 </html>
+

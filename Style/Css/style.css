@@ -79,7 +79,7 @@ body {
 .login-box .input-check:checked ~ .lamp::before {
   top: 0rem;
 }
-.login-box .toggle {
+.login-box .my-toggle {
   position: absolute;
   top: 2rem;
   right: -5rem;
@@ -88,7 +88,16 @@ body {
   background-color: #191919;
   border-radius: 0.5rem;
 }
-.login-box .toggle::before {
+.login-box .remember-forgot {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.login-box .text-sm {
+  font-size: 14px;
+}
+.login-box .my-toggle::before {
   content: " ";
   position: absolute;
   top: 50%;
@@ -98,7 +107,7 @@ body {
   height: 6rem;
   background-color: black;
 }
-.login-box .toggle::after {
+.login-box .my-toggle::after {
   content: " ";
   position: absolute;
   top: 0.5rem;
@@ -113,7 +122,7 @@ body {
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
   transition: 0.5s ease;
 }
-.login-box .toggle .text {
+.login-box .my-toggle .text {
   position: absolute;
   top: 1.1rem;
   left: 50%;
@@ -124,17 +133,17 @@ body {
   transition: 0.5s;
   cursor: pointer;
 }
-.login-box .toggle .off {
+.login-box .my-toggle .off {
   opacity: 1;
 }
-.login-box .input-check:checked ~ .toggle .off {
+.login-box .input-check:checked ~ .my-toggle .off {
   transform: translate(-0.8rem, 4.2rem);
   opacity: 0;
 }
-.login-box .toggle .on {
+.login-box .my-toggle .on {
   opacity: 0;
 }
-.login-box .input-check:checked ~ .toggle .on {
+.login-box .input-check:checked ~ .my-toggle .on {
   transform: translate(-0.8rem, 4.2rem);
   opacity: 1;
   color: #00f7ff;
@@ -146,7 +155,7 @@ body {
   z-index: 1;
   opacity: 0;
 }
-.login-box .input-check:checked ~ .toggle::after {
+.login-box .input-check:checked ~ .my-toggle::after {
   top: 4.7rem;
 }
 .login-box .input-box input {
@@ -238,6 +247,113 @@ body {
   text-shadow: 0 0 1rem #00f7ff, 0 0 2rem #00f7ff;
 }
 
+.checkbox-wrapper-33 {
+  --s-xsmall: 0.4rem;
+  --s-small: 0.5rem;
+  --border-width: 1px;
+  --c-primary: #00f7ff;
+  --c-primary-20-percent-opacity: rgb(95 17 232 / 20%);
+  --c-primary-10-percent-opacity: rgb(95 17 232 / 10%);
+  --t-base: 0.4s;
+  --t-fast: 0.2s;
+  --e-in: ease-in;
+  --e-out: cubic-bezier(0.11, 0.29, 0.18, 0.98);
+}
+
+.checkbox-wrapper-33 .visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.checkbox-wrapper-33 .checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.checkbox-wrapper-33 .checkbox + .checkbox {
+  margin-top: var(--s-small);
+}
+
+.checkbox-wrapper-33 .checkbox__symbol {
+  display: inline-block;
+  display: flex;
+  margin-right: calc(var(--s-small) * 0.7);
+  border: var(--border-width) solid var(--c-primary);
+  position: relative;
+  border-radius: 0.1em;
+  width: 1.2em;
+  height: 1.2em;
+  transition: box-shadow var(--t-base) var(--e-out), background-color var(--t-base);
+  box-shadow: 0 0 0 0 var(--c-primary-10-percent-opacity);
+}
+
+.checkbox-wrapper-33 .checkbox__symbol:after {
+  content: "";
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  width: 0.25em;
+  height: 0.25em;
+  background-color: var(--c-primary-20-percent-opacity);
+  opacity: 0;
+  border-radius: 3em;
+  transform: scale(1);
+  transform-origin: 50% 50%;
+}
+
+.checkbox-wrapper-33 .checkbox .icon-checkbox {
+  width: 1em;
+  height: 1em;
+  margin: auto;
+  fill: none;
+  stroke-width: 3;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  color: var(--c-primary);
+  display: inline-block;
+}
+
+.checkbox-wrapper-33 .checkbox .icon-checkbox path {
+  transition: stroke-dashoffset var(--t-fast) var(--e-in);
+  stroke-dasharray: 30px, 31px;
+  stroke-dashoffset: 31px;
+}
+
+.checkbox-wrapper-33 .checkbox__textwrapper {
+  margin: 0;
+}
+
+.checkbox-wrapper-33 .checkbox__trigger:checked + .checkbox__symbol:after {
+  animation: ripple-33 1.5s var(--e-out);
+}
+
+.checkbox-wrapper-33 .checkbox__trigger:checked + .checkbox__symbol .icon-checkbox path {
+  transition: stroke-dashoffset var(--t-base) var(--e-out);
+  stroke-dashoffset: 0px;
+}
+
+.checkbox-wrapper-33 .checkbox__trigger:focus + .checkbox__symbol {
+  box-shadow: 0 0 0 0.25em var(--c-primary-20-percent-opacity);
+}
+@keyframes ripple-33 {
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: scale(20);
+  }
+}
 /* === end of section === */
 /* === start of function === */
 /* === end of function === */
